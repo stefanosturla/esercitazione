@@ -18,8 +18,6 @@ Quadrilateral::Quadrilateral(TextArea ta) {
 	 
 	Init();
 
-	strcpy(tarea->string, ta.string);
-	tarea->size = ta.size;
 } 
 
 /// @brief copy constructor 
@@ -32,6 +30,7 @@ Quadrilateral::Quadrilateral(const Quadrilateral &o) {
 }
 
 /// @brief destructor
+/// memory deallocation of an array dinamically created by new operator
 Quadrilateral::~Quadrilateral() {
 
 	cout << "Quadrilateral - destructor" << endl;
@@ -76,10 +75,10 @@ bool Quadrilateral::operator==(const Quadrilateral &o) {
 }
 
 
-/// @brief default initialization of the object
+/// @brief default initialization of the object 
+/// memory allocation 
 void Quadrilateral::Init() {
 	
-	TextArea str;
 	tarea = new(TextArea);
 	tarea->size = 0;
 	strcpy(tarea->string, "standard");
@@ -91,6 +90,7 @@ void Quadrilateral::Init() {
 
 /// @brief initialization of the object as a copy of an object 
 /// @param r reference to the object that should be copied 
+/// added the copy of string and size 
 void Quadrilateral::Init(const Quadrilateral &o) {
 	Reset();
 	Init();
@@ -144,7 +144,7 @@ void Quadrilateral::GetSides(float &s0, float &s1, float &s2, float &s3) {
 
 }
 
-/// @brief get the info about the text area
+/// @brief get the info about the text area , size and string 
 /// @param ta a struct of type TextArea to be filled
 void Quadrilateral::GetTextArea(TextArea &ta) {
 
@@ -152,7 +152,7 @@ void Quadrilateral::GetTextArea(TextArea &ta) {
 	strcpy(ta.string, tarea->string);
 } 
 
-/// @brief get the text of the text area 
+/// @brief get the text of the text area , string 
 /// @param text the string used in the text area 
 void Quadrilateral::GetText(char* text) {
 
@@ -212,7 +212,7 @@ void Quadrilateral::WarningMessage(const char *string) {
 }
 
 
-/// @brief for debugging: all about the object
+/// @brief for debugging: all about the object , added output of size and string 
 void Quadrilateral::Dump() {
 	
 	cout << endl;

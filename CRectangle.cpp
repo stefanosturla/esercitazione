@@ -38,7 +38,7 @@ Rectangle::Rectangle(float w, float h) {
 /// @brief constructor 
 /// @param w width of the rectangle
 /// @param h height of the rectangle 
-/// @param sf struct of type Format
+/// @param ta struct of type TextArea
 Rectangle::Rectangle(float w, float h, TextArea ta):Quadrilateral(ta) {
 
 	Init();
@@ -68,7 +68,6 @@ Rectangle::~Rectangle() {
 Rectangle::Rectangle(const Rectangle &r):Quadrilateral(r) { 
 
 	cout << "Rectangle - copy constructor" << endl;
-
 	Init(r);
 	
 }
@@ -106,11 +105,14 @@ void Rectangle::Init() {
 
 
 /// @brief initialization of the object as a copy of an object 
-/// @param r reference to the object that should be copied 
-void Rectangle::Init(const Rectangle &r) {
-	
+/// @param r reference to the object that should be copied
+/// added the copy of string and size  
+void Rectangle::Init(const Rectangle& r) {
+
 	Init();
-	SetDim(r.width,r.height);
+	SetDim(r.width, r.height);
+	strcpy(tarea->string, r.tarea->string);
+	tarea->size = r.tarea->size;
 
 }
 
@@ -206,6 +208,7 @@ void Rectangle::ErrorMessage(const char *string) {
 }
 
 /// @brief to draw a rectangle
+/// output all the charateristics of the rectangle 
 void Rectangle::Drawing() {
 	cout << "disegno un rettangolo con base e altezza rispettivamente : " << width <<" e "<< height << endl;
 	cout << "con font : " << tarea->string << " e dimensioni carattere : " << tarea->size << endl;
