@@ -105,9 +105,8 @@ void Rhombus::Init() {
 }
 
 
-/// @brief initialization of the object as a copy of an object 
+/// @brief initialization of the object as a copy of an object, added the copy of string and size   
 /// @param r reference to the object that should be copied 
-/// added the copy of string and size  
 void Rhombus::Init(const Rhombus &r) {
 		
 	Init();
@@ -248,8 +247,7 @@ void Rhombus::Dump() {
 }
 
 
-/// @brief to draw a rhombus
-/// output all the charateristics of the rhombus
+/// @brief to draw a rhombus: output all the charateristics of the rhombus
 void Rhombus::Drawing() {
 	cout << "disegno un rombo con diagonale minore e maggiore rispettivamente : " << diagS << " e " << diagL << endl;
 	cout << "con font : "  << tarea->string <<" e dimensioni carattere : "  << tarea->size << endl;

@@ -104,9 +104,8 @@ void Rectangle::Init() {
 }
 
 
-/// @brief initialization of the object as a copy of an object 
-/// @param r reference to the object that should be copied
-/// added the copy of string and size  
+/// @brief initialization of the object as a copy of an object, added the copy of string and size 
+/// @param r reference to the object that should be copied  
 void Rectangle::Init(const Rectangle& r) {
 
 	Init();
@@ -207,8 +206,7 @@ void Rectangle::ErrorMessage(const char *string) {
 
 }
 
-/// @brief to draw a rectangle
-/// output all the charateristics of the rectangle 
+/// @brief to draw a rectangle: output all the charateristics of the rectangle 
 void Rectangle::Drawing() {
 	cout << "disegno un rettangolo con base e altezza rispettivamente : " << width <<" e "<< height << endl;
 	cout << "con font : " << tarea->string << " e dimensioni carattere : " << tarea->size << endl;

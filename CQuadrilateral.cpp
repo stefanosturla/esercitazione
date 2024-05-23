@@ -10,8 +10,7 @@ Quadrilateral::Quadrilateral() {
 
 } 
 
-/// @brief constructor 
-/// ta a struct of type TextArea with infos on text and font size
+/// @brief constructor ta a struct of type TextArea with infos on text and font size
 Quadrilateral::Quadrilateral(TextArea ta) {
 	
 	cout << "Quadrilateral TextArea - constructor" << endl;
@@ -29,8 +28,7 @@ Quadrilateral::Quadrilateral(const Quadrilateral &o) {
 	Init(o);
 }
 
-/// @brief destructor
-/// memory deallocation of an array dinamically created by new operator
+/// @brief destructor memory deallocation of an array dinamically created by new operator
 Quadrilateral::~Quadrilateral() {
 
 	cout << "Quadrilateral - destructor" << endl;
@@ -75,8 +73,7 @@ bool Quadrilateral::operator==(const Quadrilateral &o) {
 }
 
 
-/// @brief default initialization of the object 
-/// memory allocation 
+/// @brief default initialization of the object and memory allocation 
 void Quadrilateral::Init() {
 	
 	tarea = new(TextArea);
@@ -88,9 +85,8 @@ void Quadrilateral::Init() {
 }
 
 
-/// @brief initialization of the object as a copy of an object 
+/// @brief initialization of the object as a copy of an object, added the copy of string and size  
 /// @param r reference to the object that should be copied 
-/// added the copy of string and size 
 void Quadrilateral::Init(const Quadrilateral &o) {
 	Reset();
 	Init();
